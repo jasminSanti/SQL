@@ -1,0 +1,30 @@
+create table "famous" (id integer primary key, name text);
+insert into "famous" values (1, "Chris Rock");
+insert into "famous" values (2, "will Smith");
+insert into "famous" values(3, "James Charles");
+insert into "famous" values(4, "Selena Gomez");
+
+create table "careers" (id integer primary key , Career TEXT);
+insert into "careers" values (1, "camidian");
+insert into "careers" values (2, "actor");
+insert into "careers" values (3, "infuencer");
+insert into "careers" values (4 ," artist" );
+
+
+
+create table "acomplishments" (id integer primary key, name text);
+insert into "acomplishments" values (1, "ego death world tour");
+insert into "acomplishments" values (2, " i am legend");
+insert into "acomplishments" values (3, " make up reviews");
+insert into "acomplishments" values (4, "calm down");
+
+select name, career from careers
+join famous
+on famous.id = careers.id;
+
+
+select famous.name, career, acomplishments.name from famous
+join careers
+on famous.id = careers.id
+join acomplishments
+on acomplishments.id = famous.id;
