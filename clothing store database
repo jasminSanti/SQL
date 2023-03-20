@@ -1,0 +1,16 @@
+--create a store database 
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, Price INTEGER, color TEXT);
+
+INSERT INTO store VALUES (1, "shirts", 3 , 5, "RED");INSERT INTO store VALUES (2, "Pants", 3 , 15, "Blue");
+INSERT INTO store VALUES (3, "shorts", 3 , 10, "Gray");
+INSERT INTO store VALUES (4, "socks", 3 , 5, "Black");
+INSERT INTO store VALUES (5, "Bras", 4 , 7, "white");
+
+
+-- dispay the store database by price 
+
+SELECT Price FROM store ORDER BY Price ;
+
+SELECT Price, SUM (quantity) FROM store;
+SELECT * FROM store;
