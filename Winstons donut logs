@@ -1,0 +1,21 @@
+-- winstons donut logs 
+
+select donuts_eaten from winstons_donut_logs;
+select status from winstons_donut_logs group by years_old having =50;
+select reason, avg (donuts_eaten) as avg_reason 
+from winstions_donut_logs 
+group by reasons having avg_reason >100;
+
+select type years_old 
+case 
+when years_old >20
+then "a"
+when years_old <19
+then "b"
+else then "c"
+
+select count (*) from winstions_donut_logs where donuts_eaten Total;
+
+select donuts_eaten , Sum (integer) from winstions_donut_logs group by reasons;
+select * from where years_old where type in (select type from winstions_donut_logs);
+select years_old, round 10* as avg_age from winstions_donut_logs;
