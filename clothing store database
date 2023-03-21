@@ -14,3 +14,8 @@ SELECT Price FROM store ORDER BY Price ;
 
 SELECT Price, SUM (quantity) FROM store;
 SELECT * FROM store;
+
+
+
+select sum(Quantity), product from FebSales where location like '% Los Angeles%' group by product;
+
