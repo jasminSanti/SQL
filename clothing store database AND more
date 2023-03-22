@@ -15,7 +15,18 @@ SELECT Price FROM store ORDER BY Price ;
 SELECT Price, SUM (quantity) FROM store;
 SELECT * FROM store;
 
-
+--other SQL 
 
 select sum(Quantity), product from FebSales where location like '% Los Angeles%' group by product;
+
+--What was the average quantity of products purchased per account in February?
+
+select avg (quantity), count (customers.acctnum) from febsales
+left join Customers  on febsales.Orderid= order_id
+WHERE length(orderid) = 6 
+AND orderid <> 'Order ID'
+
+--Which product brought in the most revenue in January and how much revenue did it bring in total?
+select sum (quantity) *price as revenue, product from Jansales group by product order by revenue desc LIMIT 1;
+
 
