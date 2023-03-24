@@ -46,13 +46,22 @@ select Name, InvoiceLineId from Invoice_items
 join Tracks  
 ON invoice_items.TrackId = tracks.TrackId;
 
-Write a query that includes the purchased track name AND artist name with each invoice line ID.
+--Write a query that includes the purchased track name AND artist name with each invoice line ID.
+select tracks.Name as track, InvoiceLineId, artists.name as artist from Invoice_items 
+join Tracks 
+ ON invoice_items.TrackId = tracks.TrackId
+join Artists
+ON Artistid=tracks.TrackId;
+
+--Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+select tracks.Name as track, artists.name, InvoiceLineId as artist from Invoice_items 
+left join Tracks 
+ ON invoice_items.TrackId = tracks.TrackId
+ inner join albums on albums.AlbumId=  tracks.AlbumId
+left join Artists
+ON artists.ArtistId= albums.ArtistId ;
+
+--Show the total sales made by each sales agent.
 
 
-Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
-
-
-Show the total sales made by each sales agent.
-
-
-Which sales agent made the most dollars in sales in 2009?
+--Which sales agent made the most dollars in sales in 2009?
