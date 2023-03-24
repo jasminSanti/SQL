@@ -42,7 +42,9 @@ join chinook.Invoices Inv ON Inv.CustomerId = cust.CustomerId;
 select sum(total) from invoices where invoicedate like "%2009%"
 
 --Write a query that includes the purchased track name with each invoice line ID.
-
+select Name, InvoiceLineId from Invoice_items 
+join Tracks  
+ON invoice_items.TrackId = tracks.TrackId;
 
 Write a query that includes the purchased track name AND artist name with each invoice line ID.
 
